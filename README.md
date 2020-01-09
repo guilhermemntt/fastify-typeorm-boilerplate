@@ -30,7 +30,7 @@ Deploy a Node.js server very quickly with Fastify and TypeORM.
 
 ## Run
 
-First of all, install [**typescript**](https://www.npmjs.com/package/typescript),[**nodemon**](https://www.npmjs.com/package/nodemon) and [**typeorm-model-generator**](https://www.npmjs.com/package/typeorm-model-generator) gobally with [**yarn**](https://yarnpkg.com/lang/en/).
+First of all, install [**typescript**](https://www.npmjs.com/package/typescript), [**nodemon**](https://www.npmjs.com/package/nodemon) and [**typeorm-model-generator**](https://www.npmjs.com/package/typeorm-model-generator) gobally with [**yarn**](https://yarnpkg.com/lang/en/).
 
 1. At the repository root, download the dependencies with **yarn**:
 ```
