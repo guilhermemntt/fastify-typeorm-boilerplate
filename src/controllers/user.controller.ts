@@ -13,7 +13,11 @@ interface userController {
 let userController: userController = {
   get: async (request, reply) => {
     try {
-      const users: User[] = await User.find();
+      // const users: User[] = await User.find();
+
+      const users: User[] = await User.createQueryBuilder("user")
+        .innerJoinAndSelect("user.address", "address")
+        .getMany();
 
       reply.code(200).send(users);
     } catch (error) {
@@ -38,6 +42,16 @@ let userController: userController = {
       });
 
       const response = await User.insert({ ...request.body, address });
+
+      // { ...request.body, address }
+
+      // {
+      // cpf: cpf:,
+      // name:name,
+      // sex:sex,
+      // birth:birth,
+      // address:address
+      // }
 
       reply.status(200).send(response);
     } catch (error) {

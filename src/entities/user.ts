@@ -32,7 +32,7 @@ export class User extends BaseEntity {
     enum: ["M", "F"],
     name: "sex"
   })
-  sex: ["M", "F"];
+  sex: "M" | "F";
 
   @Column("date", {
     nullable: false,

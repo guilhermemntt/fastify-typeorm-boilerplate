@@ -1,5 +1,6 @@
 import fastify from "fastify";
 import { Address } from "../entities/address";
+import { User } from "../entities/user";
 
 interface addressController {
   get: fastify.RequestHandler;
@@ -12,7 +13,13 @@ interface addressController {
 let addressController: addressController = {
   get: async (request, reply) => {
     try {
-      const addresses: Address[] = await Address.find();
+      // const addresses: Address[] = await Address.find();
+
+      const addresses: Address[] = await Address.createQueryBuilder("address")
+        .leftJoinAndSelect("address.users", "users")
+        .getMany();
+
+      console.log(addresses);
 
       reply.code(200).send(addresses);
     } catch (error) {
