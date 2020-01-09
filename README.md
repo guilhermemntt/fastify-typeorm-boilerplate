@@ -36,7 +36,7 @@ First of all, install [**typescript**](https://www.npmjs.com/package/typescript)
 ```
 yarn
 ```
-2. Rename the file *example.env* to *.env*, and edit the environment variables. Some of them are required when using Fastify and TypeORM  as ```JWT_SECRET```,```SERVER_PORT``` and ```DB\_``` ones.
+2. Rename the file *example.env* to *.env*, and edit the environment variables. Some of them are required when using Fastify and TypeORM  as ```JWT_SECRET```,```SERVER_PORT``` and ```DB_``` ones.
 
 3. Make sure you're running your database service. Using ```typeorm-model-generator```, export your already created database entities to TypeORM TypesScript classes inside src/entities/ folder.
 
