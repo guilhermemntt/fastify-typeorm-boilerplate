@@ -46,13 +46,13 @@ typeorm-model-generator -h <host> -d <database> -p [port] -u <user> -x [password
 
 ```typeorm-model-generator``` tends to generate some incongruities. Follow the instructions to fix them:
 
-  + Delete *ormconfig.json* and *tsconfig.json* created files inside src/.
+  - Delete *ormconfig.json* and *tsconfig.json* created files inside src/.
 
-  + Rename .ts entity class files as you want.
+  - Rename .ts entity class files as you want.
 
-  + Add ```extends BaseEntity``` at the end of each .ts entity class inside src/entities/ folder.
+ - Add ```extends BaseEntity``` at the end of each .ts entity class inside src/entities/ folder.
 
-  + Check the nullity of some reference attributes of created .ts class entities.
+ - Check the nullity of some reference attributes of created .ts class entities.
 
 4. Add aditional services at *index.ts* services array, if necessary.
 
