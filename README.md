@@ -38,13 +38,13 @@ yarn
 ```
 2. Rename the file *example.env* to *.env*, and edit the environment variables. Some of them are required when using Fastify and TypeORM  as ```JWT_SECRET```,```SERVER_PORT``` and ```DB_``` ones.
 
-3. Make sure you're running your database service. Using ```typeorm-model-generator```, export your already created database entities to TypeORM TypesScript classes inside src/entities/ folder.
+3. Make sure you're running your database service. Using **typeorm-model-generator**, export your already created database entities to TypeORM TypesScript classes inside src/entities/ folder.
 
 ```
 typeorm-model-generator -h <host> -d <database> -p [port] -u <user> -x [password] -e [engine] -o ./src
 ```
 
-```typeorm-model-generator``` tends to generate some incongruities. Follow the instructions to fix them:
+**typeorm-model-generator** tends to generate some incongruities. Follow the instructions to fix them:
 
   - Delete *ormconfig.json* and *tsconfig.json* created files inside src/.
 
