@@ -41,9 +41,9 @@ let addressController: addressController = {
   },
   add: async (request, reply) => {
     try {
-      const response = await Address.insert(request.body);
+      const address: Address = await Address.save(request.body);
 
-      reply.status(200).send(response);
+      reply.status(200).send(address);
     } catch (error) {
       console.log(error);
       reply.status(500).send();

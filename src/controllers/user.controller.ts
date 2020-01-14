@@ -41,7 +41,7 @@ let userController: userController = {
         id: request.body.addressId
       });
 
-      const response = await User.insert({ ...request.body, address });
+      const user: User = await User.save({ ...request.body, address });
 
       // { ...request.body, address }
 
@@ -53,7 +53,7 @@ let userController: userController = {
       // address:address
       // }
 
-      reply.status(200).send(response);
+      reply.status(200).send(user);
     } catch (error) {
       console.log(error);
       reply.status(500).send();
