@@ -41,12 +41,13 @@ yarn
 3. Make sure you're running your database service. Using **typeorm-model-generator**, export your already created database entities to TypeORM TypesScript classes inside src/entities/ folder.
 
 ```
-typeorm-model-generator -h <host> -d <database> -p [port] -u <user> -x [password] -e [engine] -o ./src
+typeorm-model-generator -h <host> -d <database> -p [port] -u <user> -x [password] -e [engine] --relationIds false --noConfig true -o ./src
 ```
+You can check the options with ```typeorm-model-generator --help```.
 
 **typeorm-model-generator** tends to generate some incongruities. Follow the instructions to fix them:
 
-  - Delete *ormconfig.json* and *tsconfig.json* created files inside src/.
+  - Delete *ormconfig.json* and *tsconfig.json* created files inside src/ (```typeorm-model-generator``` version < 0.4.0).
 
   - Rename .ts entity class files as you want.
 
