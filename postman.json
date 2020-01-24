@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "8ddc4b5e-1f4c-4263-a80b-a53134dce77f",
+		"_postman_id": "28f0888b-79c6-4e7a-9f7b-de3f46dcef90",
 		"name": "fastify-typeorm-boilerplate",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -325,7 +325,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "localhost:3000/user/05437631022",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"05437631022"
+							]
 						}
 					},
 					"response": [
@@ -402,15 +410,6 @@
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "text"
-										}
-									}
-								},
 								"url": {
 									"raw": "localhost:3000/user",
 									"host": [
@@ -455,6 +454,74 @@
 							"body": "[\n    {\n        \"cpf\": \"05437631022\",\n        \"name\": \"Andrew Simmons\",\n        \"sex\": \"M\",\n        \"birth\": \"1997-04-09\"\n    }\n]"
 						}
 					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cpf\": \"05437631022\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImNwZiI6IjA1NDM3NjMxMDIyIiwibmFtZSI6IkFuZHJldyBTaW1tb25zIiwic2V4IjoiTSIsImJpcnRoIjoiMTk5Ny0wNC0wOSJ9LCJpYXQiOjE1Nzk4ODU5MDgsImV4cCI6MTU3OTg4NTk2OCwianRpIjoiNSJ9._mkUzT7Y5RwP-DthTPIaMdhb6AwsSy4C-11hiADgmpQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
