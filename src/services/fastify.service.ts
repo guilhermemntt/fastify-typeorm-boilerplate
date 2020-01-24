@@ -37,7 +37,7 @@ const fastifyService: FastifyService = {
             !blacklist.some(
               blacklistedToken => blacklistedToken.jti == decodedToken.jti
             )
-              ? (decodedToken as any)
+              ? (decodedToken as any).payload
               : false
         });
       server.register(multer.contentParser);
