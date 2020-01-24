@@ -5,7 +5,7 @@ const authenticationHook: fastify.FastifyMiddleware = async (
   reply
 ) => {
   try {
-    return process.env.SERVER_JWT === "true" ? await request.jwtVerify() : true;
+    if (process.env.SERVER_JWT === "true") await request.jwtVerify();
   } catch (error) {
     console.log("[FASTIFY] Unauthorized error with JWT validation \n", error);
     reply.code(401).send();

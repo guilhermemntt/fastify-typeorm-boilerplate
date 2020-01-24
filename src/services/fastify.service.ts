@@ -33,11 +33,12 @@ const fastifyService: FastifyService = {
       if (process.env.SERVER_JWT === "true")
         server.register(fastifyJwt, {
           secret: process.env.SERVER_JWT_SECRET,
-          trusted: (request, decodedToken) => {
-            return !blacklist.some(
+          trusted: (request, decodedToken) =>
+            !blacklist.some(
               blacklistedToken => blacklistedToken.jti == decodedToken.jti
-            );
-          }
+            )
+              ? (decodedToken as any)
+              : false
         });
       server.register(multer.contentParser);
       server.register(fastifyCors);
