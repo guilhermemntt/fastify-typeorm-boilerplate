@@ -34,11 +34,11 @@ const fastifyService: FastifyService = {
         server.register(fastifyJwt, {
           secret: process.env.SERVER_JWT_SECRET,
           trusted: (request, decodedToken) =>
-            !blacklist.some(
+            blacklist.some(
               blacklistedToken => blacklistedToken.jti == decodedToken.jti
             )
-              ? (decodedToken as any).payload
-              : false
+              ? false
+              : (decodedToken as any).payload
         });
       server.register(multer.contentParser);
       server.register(fastifyCors);
