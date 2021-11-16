@@ -7,7 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/mongodb": "^3.3.14",
-    "aws-sdk": "^2.599.0",
+    "aws-sdk": "^2.814.0",
     "dotenv": "^8.2.0",
     "fastify": "^2.11.0",
     "fastify-cors": "^3.0.1",
